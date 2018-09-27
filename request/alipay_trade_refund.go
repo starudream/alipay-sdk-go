@@ -14,6 +14,7 @@ type AlipayTradeRefundRequest struct {
 	TerminalId              string                                    `json:"terminal_id,omitempty"`
 	GoodsDetail             []AlipayTradeRefundGoodsDetail            `json:"goods_detail,omitempty"`
 	RefundRoyaltyParameters []AlipayTradeRefundRefundRoyaltyParameter `json:"refund_royalty_parameters,omitempty"`
+	OrgPid                  string                                    `json:"org_pid,omitempty"`
 }
 
 type AlipayTradeRefundGoodsDetail struct {

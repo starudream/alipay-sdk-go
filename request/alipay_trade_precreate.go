@@ -3,23 +3,23 @@ package request
 const AlipayTradePrecreateMethod = "alipay.trade.precreate"
 
 type AlipayTradePrecreateRequest struct {
-	OutTradeNo           string                           `json:"out_trade_no"`
-	SellerId             string                           `json:"seller_id,omitempty"`
-	TotalAmount          string                           `json:"total_amount"`
-	DiscountableAmount   string                           `json:"discountable_amount,omitempty"`
-	Subject              string                           `json:"subject"`
-	GoodsDetail          []AlipayTradePrecreateGoodDetail `json:"goods_detail,omitempty"`
-	Body                 string                           `json:"body,omitempty"`
-	OperatorId           string                           `json:"operator_id,omitempty"`
-	StoreId              string                           `json:"store_id,omitempty"`
-	DisablePayChannels   string                           `json:"disable_pay_channels"`
-	EnablePayChannels    string                           `json:"enable_pay_channels"`
-	TerminalId           string                           `json:"terminal_id,omitempty"`
-	ExtendParams         AlipayTradePrecreateExtendParams `json:"extend_params,omitempty"`
-	TimeoutExpress       string                           `json:"timeout_express,omitempty"`
-	SettleInfo           string                           `json:"settle_info,omitempty"`
-	BusinessParams       string                           `json:"business_params,omitempty"`
-	QrCodeTimeoutExpress string                           `json:"qr_code_timeout_express,omitempty"`
+	OutTradeNo           string                            `json:"out_trade_no"`
+	SellerId             string                            `json:"seller_id,omitempty"`
+	TotalAmount          string                            `json:"total_amount"`
+	DiscountableAmount   string                            `json:"discountable_amount,omitempty"`
+	Subject              string                            `json:"subject"`
+	GoodsDetail          []AlipayTradePrecreateGoodDetail  `json:"goods_detail,omitempty"`
+	Body                 string                            `json:"body,omitempty"`
+	OperatorId           string                            `json:"operator_id,omitempty"`
+	StoreId              string                            `json:"store_id,omitempty"`
+	DisablePayChannels   string                            `json:"disable_pay_channels"`
+	EnablePayChannels    string                            `json:"enable_pay_channels"`
+	TerminalId           string                            `json:"terminal_id,omitempty"`
+	ExtendParams         *AlipayTradePrecreateExtendParams `json:"extend_params,omitempty"`
+	TimeoutExpress       string                            `json:"timeout_express,omitempty"`
+	SettleInfo           string                            `json:"settle_info,omitempty"`
+	BusinessParams       string                            `json:"business_params,omitempty"`
+	QrCodeTimeoutExpress string                            `json:"qr_code_timeout_express,omitempty"`
 }
 
 type AlipayTradePrecreateGoodDetail struct {
