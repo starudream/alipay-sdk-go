@@ -199,17 +199,19 @@ func (client *ClientData) ComposeParameterString() (string, string, error) {
 	signString := ""   // 待签名参数串
 	encodeString := "" // 经过 url 编码的参数串
 	for _, key := range keys {
+		Printf("%s: %s", key, requestDataMap[key])
 		signString += key + "=" + requestDataMap[key] + "&"
 		encodeString += key + "=" + url.QueryEscape(requestDataMap[key]) + "&"
 	}
 	// 去掉最后一个 "&"
 	signString = signString[:len(signString)-1]
 	encodeString = encodeString[:len(encodeString)-1]
-
+	Printf("encode string: %s", encodeString)
 	return signString, encodeString, nil
 }
 
 func (client *ClientData) RequestUrl(method string, bizContent interface{}) (string, error) {
+	Printf("---------- request ----------")
 	// 基本验证
 	err := client.Validate()
 	if err != nil {
@@ -244,12 +246,15 @@ func (client *ClientData) RequestUrl(method string, bizContent interface{}) (str
 		sign, err = RsaSign(signString, client.PrivateKey, crypto.SHA256)
 	}
 	if err != nil {
-		return signString, err
+		return "", err
 	}
 	client.RequestData.Sign = sign
+	Printf("sign: %s", client.RequestData.Sign)
 
 	// 拼接 url 并添加 sign 字段
-	return client.ServerUrl + "?" + encodeString + "&sign=" + url.QueryEscape(sign), nil
+	var requestUrl = client.ServerUrl + "?" + encodeString + "&sign=" + url.QueryEscape(sign)
+	Printf("request url: %s", requestUrl)
+	return requestUrl, nil
 }
 
 func (client *ClientData) SendRequest(method string, bizContent interface{}) (string, error) {
@@ -260,10 +265,12 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 	}
 
 	// 发送请求
+	Printf("---------- response ----------")
 	body, err := GetRequest(requestUrl)
 	if err != nil {
-		return requestUrl, err
+		return "", err
 	}
+	Printf("body: %s", body)
 
 	// 首先通过解析 json 判断有必要字段
 	var response map[string]interface{}
@@ -272,9 +279,10 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 	if contentInterface == nil {
 		contentInterface = response[strings.Replace(method, ".", "_", -1)+"_response"]
 	}
+
 	signInterface := response["sign"]
 	if contentInterface == nil || signInterface == nil {
-		return body, errors.New("response must have `method_response` and `sign` field")
+		return "", errors.New("response must have `method_response` and `sign` field")
 	}
 
 	// 通过 index 来取出相应的字段
@@ -283,17 +291,19 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 	contentEndIndex := strings.LastIndex(body, `"sign":`) - 1
 	contentJsonString := body[contentStartIndex:contentEndIndex]
 	signString := body[contentEndIndex+9 : len(body)-2]
+	Printf("sign: %s", signString)
+	Printf("method response: %s", contentJsonString)
 
 	// 验证签名
 	if client.RequestData.SignType == "RSA" {
 		err = RsaCheck(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA1)
 		if err != nil {
-			return contentJsonString + "\n" + signString, err
+			return "", err
 		}
 	} else if client.RequestData.SignType == "RSA2" {
 		err = RsaCheck(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA256)
 		if err != nil {
-			return contentJsonString + "\n" + signString, err
+			return "", err
 		}
 	}
 

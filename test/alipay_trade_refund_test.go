@@ -21,9 +21,5 @@ func TestAlipayTradeRefund(t *testing.T) {
 			},
 		},
 	}
-	response, err := client.SendRequest(request.AlipayTradeRefundMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayTradeRefundMethod, data)
 }

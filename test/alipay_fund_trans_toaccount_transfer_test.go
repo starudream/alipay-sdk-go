@@ -17,9 +17,5 @@ func TestAlipayFundTransToaccountTransfer(t *testing.T) {
 		PayeeRealName: "沙箱环境",
 		Remark:        "测试转账测试转账",
 	}
-	response, err := client.SendRequest(request.AlipayFundTransToaccountTransferMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayFundTransToaccountTransferMethod, data)
 }

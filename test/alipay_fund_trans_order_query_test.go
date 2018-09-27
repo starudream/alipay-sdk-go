@@ -11,9 +11,5 @@ func TestAlipayFundTransOrderQuery(t *testing.T) {
 	data := &request.AlipayFundTransOrderQueryRequest{
 		OutBizNo: "20180901000000T00001",
 	}
-	response, err := client.SendRequest(request.AlipayFundTransOrderQueryMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayFundTransOrderQueryMethod, data)
 }

@@ -20,9 +20,5 @@ func TestAlipayTradeWapPay(t *testing.T) {
 			TransMemo: "测试",
 		},
 	}
-	response, err := client.RequestUrl(request.AlipayTradeWapPayMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.RequestUrl(request.AlipayTradeWapPayMethod, data)
 }

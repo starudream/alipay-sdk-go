@@ -12,9 +12,5 @@ func TestAlipayDataDataserviceBillDownloadurlQuery(t *testing.T) {
 		BillType: "trade",
 		BillDate: "2018-07",
 	}
-	response, err := client.SendRequest(request.AlipayDataDataserviceBillDownloadurlQueryMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayDataDataserviceBillDownloadurlQueryMethod, data)
 }

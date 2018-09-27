@@ -12,9 +12,5 @@ func TestAlipaySystemOauthToken(t *testing.T) {
 		"authorization_code",
 		"2b744f7f07ba45f5804fbc9d89c4XX18",
 	)
-	response, err := client.SendRequest(request.AlipaySystemOauthTokenMethod, nil)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipaySystemOauthTokenMethod, nil)
 }

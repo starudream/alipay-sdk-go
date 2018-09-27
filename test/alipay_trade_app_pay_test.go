@@ -15,9 +15,5 @@ func TestAlipayTradeAppPay(t *testing.T) {
 		TotalAmount: "9.99",
 		ProductCode: "QUICK_MSECURITY_PAY",
 	}
-	response, err := client.SendRequest(request.AlipayTradeAppPayMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayTradeAppPayMethod, data)
 }

@@ -17,9 +17,5 @@ func TestAlipayTradePagePay(t *testing.T) {
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	response, err := client.RequestUrl(request.AlipayTradePagePayMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.RequestUrl(request.AlipayTradePagePayMethod, data)
 }

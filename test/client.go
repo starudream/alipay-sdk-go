@@ -21,6 +21,8 @@ type Config struct {
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 func NewClient() (*alipaysdk.ClientData, *Config) {
+	alipaysdk.SetDebug(true)
+
 	config := ReadConfigFile()
 
 	client := &alipaysdk.ClientData{}

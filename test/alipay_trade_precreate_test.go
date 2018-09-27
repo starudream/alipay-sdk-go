@@ -15,9 +15,5 @@ func TestAlipayTradePrecreate(t *testing.T) {
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	response, err := client.SendRequest(request.AlipayTradePrecreateMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayTradePrecreateMethod, data)
 }

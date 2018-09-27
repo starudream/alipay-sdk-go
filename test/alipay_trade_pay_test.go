@@ -18,9 +18,5 @@ func TestAlipayTradePay(t *testing.T) {
 		TotalAmount: "9.99",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	response, err := client.SendRequest(request.AlipayTradePayMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayTradePayMethod, data)
 }

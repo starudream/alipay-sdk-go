@@ -13,9 +13,5 @@ func TestAlipayMarketingCampaignCashTrigger(t *testing.T) {
 		LoginId:  "dlnhdb4422@sandbox.com",
 		OutBizNo: "20180901000000CC00001",
 	}
-	response, err := client.SendRequest(request.AlipayMarketingCampaignCashTriggerMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayMarketingCampaignCashTriggerMethod, data)
 }

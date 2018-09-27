@@ -13,9 +13,5 @@ func TestAlipayMarketingCampaignCashListQuery(t *testing.T) {
 		PageSize:   "50",
 		PageIndex:  "1",
 	}
-	response, err := client.SendRequest(request.AlipayMarketingCampaignCashListQueryMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.SendRequest(request.AlipayMarketingCampaignCashListQueryMethod, data)
 }

@@ -13,9 +13,5 @@ func TestAlipayUserInfoAuth(t *testing.T) {
 		Scopes: []string{"auth_user"},
 		State:  "12345678",
 	}
-	response, err := client.RequestUrl(request.AlipayUserInfoAuthMethod, data)
-	if err != nil {
-		panic(err)
-	}
-	t.Log(response)
+	client.RequestUrl(request.AlipayUserInfoAuthMethod, data)
 }
