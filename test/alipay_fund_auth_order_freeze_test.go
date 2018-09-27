@@ -10,8 +10,8 @@ func TestAlipayFundAuthOrderFreeze(t *testing.T) {
 	data := &request.AlipayFundAuthOrderFreezeRequest{
 		AuthCode:     "281442445657444252",
 		AuthCodeType: "bar_code",
-		OutOrderNo:   "20180901000000PA00001",
-		OutRequestNo: "20180901000000PA00001",
+		OutOrderNo:   "20180901000000AFAOF00001",
+		OutRequestNo: "20180901000000AFAOF00001",
 		OrderTitle:   "预授权冻结",
 		Amount:       "9.99",
 		PayeeLogonId: "dlnhdb4422@sandbox.com",

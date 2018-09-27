@@ -11,7 +11,7 @@ func TestAlipayTradePagePay(t *testing.T) {
 	client.SetReturnUrl(config.ReturnUrl)
 	client.SetNotifyUrl(config.NotifyUrl)
 	data := &request.AlipayTradePagePayRequest{
-		OutTradeNo:  "20180901000000FITP00001",
+		OutTradeNo:  "20180901000000ATPP00001",
 		ProductCode: "FAST_INSTANT_TRADE_PAY",
 		TotalAmount: "9.99",
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",

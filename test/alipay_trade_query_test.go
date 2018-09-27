@@ -9,7 +9,7 @@ import (
 func TestAlipayTradeQuery(t *testing.T) {
 	client, _ := NewClient()
 	data := request.AlipayTradeQueryRequest{
-		OutTradeNo: "20180901000000QWW00001",
+		OutTradeNo: "20180901000000ATWP00001",
 	}
 	client.SendRequest(request.AlipayTradeQueryMethod, data)
 }

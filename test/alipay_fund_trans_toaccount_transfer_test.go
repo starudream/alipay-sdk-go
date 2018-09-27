@@ -9,7 +9,7 @@ import (
 func TestAlipayFundTransToaccountTransfer(t *testing.T) {
 	client, _ := NewClient()
 	data := &request.AlipayFundTransToaccountTransferRequest{
-		OutBizNo:      "20180901000000T00001",
+		OutBizNo:      "20180901000000AFTTT00001",
 		PayeeType:     "ALIPAY_LOGONID",
 		PayeeAccount:  "dlnhdb4422@sandbox.com",
 		Amount:        "9.99",

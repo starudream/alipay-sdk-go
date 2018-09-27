@@ -10,7 +10,7 @@ func TestAlipayTradePay(t *testing.T) {
 	client, config := NewClient()
 	client.SetNotifyUrl(config.NotifyUrl)
 	data := &request.AlipayTradePayRequest{
-		OutTradeNo:  "20180901000000FCFP00001",
+		OutTradeNo:  "20180901000000ATP00001",
 		Scene:       "bar_code",
 		AuthCode:    "",
 		ProductCode: "FACE_TO_FACE_PAYMENT",

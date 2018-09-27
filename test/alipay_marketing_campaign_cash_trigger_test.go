@@ -11,7 +11,7 @@ func TestAlipayMarketingCampaignCashTrigger(t *testing.T) {
 	data := &request.AlipayMarketingCampaignCashTriggerRequest{
 		CrowdNo:  "5PZx2Y5c55NlJV_FXl0V0_Wve9z3gpyqu-HzZaTrTFTMnSZ96O-zxUfKlHp5cxmx",
 		LoginId:  "dlnhdb4422@sandbox.com",
-		OutBizNo: "20180901000000CC00001",
+		OutBizNo: "20180901000000AMCCT00001",
 	}
 	client.SendRequest(request.AlipayMarketingCampaignCashTriggerMethod, data)
 }

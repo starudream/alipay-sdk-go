@@ -9,8 +9,8 @@ import (
 func TestAlipayTradeFastpayRefundQuery(t *testing.T) {
 	client, _ := NewClient()
 	data := request.AlipayTradeFastpayRefundQueryRequest{
-		OutTradeNo:   "20180901000000QWW00001",
-		OutRequestNo: "20180901000000QWW00001",
+		OutTradeNo:   "20180901000000ATWP00001",
+		OutRequestNo: "20180901000000ATWP00001",
 	}
 	client.SendRequest(request.AlipayTradeFastpayRefundQueryMethod, data)
 }

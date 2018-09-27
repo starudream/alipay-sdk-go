@@ -9,7 +9,7 @@ import (
 func TestAlipayTradeRefund(t *testing.T) {
 	client, _ := NewClient()
 	data := request.AlipayTradeRefundRequest{
-		OutTradeNo:   "20180901000000QWW00001",
+		OutTradeNo:   "20180901000000ATWP00001",
 		RefundAmount: "9.99",
 		RefundReason: "退款测试",
 	}

@@ -13,7 +13,7 @@ func TestAlipayTradeWapPay(t *testing.T) {
 	data := request.AlipayTradeWapPayRequest{
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
-		OutTradeNo:  "20180901000000QWW00001",
+		OutTradeNo:  "20180901000000ATWP00001",
 		TotalAmount: "9.99",
 		ProductCode: "QUICK_WAP_WAY",
 		ExtendParams: &request.ATWPExtendParams{
