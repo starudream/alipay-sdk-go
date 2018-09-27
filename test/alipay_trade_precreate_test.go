@@ -7,8 +7,8 @@ import (
 )
 
 func TestAlipayTradePrecreate(t *testing.T) {
-	client, _ := NewClient()
-	client.SetNotifyUrl("http://127.0.0.1")
+	client, config := NewClient()
+	client.SetNotifyUrl(config.NotifyUrl)
 	data := &request.AlipayTradePrecreateRequest{
 		OutTradeNo:  "20180901000000P00001",
 		TotalAmount: "9.99",

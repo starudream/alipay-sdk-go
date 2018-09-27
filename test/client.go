@@ -9,9 +9,13 @@ import (
 
 type Config struct {
 	AppId           string `json:"app_id"`
+	PartnerId       string `json:"partner_id"`
+	SellerId        string `json:"seller_id"`
+	ReturnUrl       string `json:"return_url"`
+	NotifyUrl       string `json:"notify_url"`
+	PublicKey       string `json:"public_key"`
 	PrivateKey      string `json:"private_key"`
 	AlipayPublicKey string `json:"alipay_public_key"`
-	PartnerId       string `json:"partner_id"`
 }
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary

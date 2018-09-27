@@ -7,9 +7,9 @@ import (
 )
 
 func TestAlipayTradeWapPay(t *testing.T) {
-	client, _ := NewClient()
-	client.SetReturnUrl("http://127.0.0.1")
-	client.SetNotifyUrl("http://127.0.0.1")
+	client, config := NewClient()
+	client.SetReturnUrl(config.ReturnUrl)
+	client.SetNotifyUrl(config.NotifyUrl)
 	data := request.AlipayTradeWapPayRequest{
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",

@@ -7,8 +7,8 @@ import (
 )
 
 func TestAlipayTradePay(t *testing.T) {
-	client, _ := NewClient()
-	client.SetNotifyUrl("http://127.0.0.1")
+	client, config := NewClient()
+	client.SetNotifyUrl(config.NotifyUrl)
 	data := &request.AlipayTradePayRequest{
 		OutTradeNo:  "20180901000000FCFP00001",
 		Scene:       "bar_code",

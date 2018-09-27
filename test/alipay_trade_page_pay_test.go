@@ -7,9 +7,9 @@ import (
 )
 
 func TestAlipayTradePagePay(t *testing.T) {
-	client, _ := NewClient()
-	client.SetReturnUrl("http://127.0.0.1")
-	client.SetNotifyUrl("http://127.0.0.1")
+	client, config := NewClient()
+	client.SetReturnUrl(config.ReturnUrl)
+	client.SetNotifyUrl(config.NotifyUrl)
 	data := &request.AlipayTradePagePayRequest{
 		OutTradeNo:  "20180901000000FITP00001",
 		ProductCode: "FAST_INSTANT_TRADE_PAY",
