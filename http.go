@@ -27,7 +27,7 @@ func HttpRequest(method, url string, value []byte) (string, error) {
 	defer response.Body.Close()
 
 	if response.StatusCode != 200 {
-		return "", errors.New("response status error:" + response.Status)
+		return "", errors.New("response status error: " + response.Status)
 	}
 
 	body, err := ioutil.ReadAll(response.Body)
