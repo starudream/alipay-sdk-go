@@ -13,13 +13,13 @@ go get -u github.com/starudream/alipay-sdk-go
 | [publicAppAuthorize.htm](./test/alipay_oauth_public_app_auth_url_test.go)                                       |
 | [appToAppAuth.htm](./test/alipay_oauth_app_to_app_auth_url_test.go)                                             |
 | [alipay.data.dataservice.bill.downloadurl.query](./test/alipay_data_dataservice_bill_downloadurl_query_test.go) |
+| [alipay.fund.trans.order.query](./test/alipay_fund_trans_order_query_test.go)                                   |
+| [alipay.fund.trans.toaccount.transfer](./test/alipay_fund_trans_toaccount_transfer_test.go)                     |
 | [alipay.marketing.campaign.cash.create](./test/alipay_marketing_campaign_cash_create_test.go)                   |
 | [alipay.marketing.campaign.cash.detail.query](./test/alipay_marketing_campaign_cash_detail_query_test.go)       |
 | [alipay.marketing.campaign.cash.list.query](./test/alipay_marketing_campaign_cash_list_query_test.go)           |
 | [alipay.marketing.campaign.cash.status.modify](./test/alipay_marketing_campaign_cash_status_modify_test.go)     |
 | [alipay.marketing.campaign.cash.trigger](./test/alipay_marketing_campaign_cash_trigger_test.go)                 |
-| [alipay.fund.trans.order.query](./test/alipay_fund_trans_order_query_test.go)                                   |
-| [alipay.fund.trans.toaccount.transfer](./test/alipay_fund_trans_toaccount_transfer_test.go)                     |
 | [alipay.open.auth.token.app](./test/alipay_open_auth_token_app_test.go)                                         |
 | [alipay.open.auth.token.app.query](./test/alipay_open_auth_token_app_query_test.go)                             |
 | [alipay.pass.instance.add](./test/alipay_pass_instance_add_test.go)                                             |
@@ -27,9 +27,9 @@ go get -u github.com/starudream/alipay-sdk-go
 | [alipay.pass.template.add](./test/alipay_pass_template_add_test.go)                                             |
 | [alipay.pass.template.update](./test/alipay_pass_template_update_test.go)                                       |
 | [alipay.system.oauth.token](./test/alipay_system_oauth_token_test.go)                                           |
-| [alipay.trade.close](./test/alipay_trade_close_test.go)                                                         |
 | [alipay.trade.app.pay](./test/alipay_trade_app_pay_test.go)                                                     |
 | [alipay.trade.cancel](./test/alipay_trade_cancel_test.go)                                                       |
+| [alipay.trade.close](./test/alipay_trade_close_test.go)                                                         |
 | [alipay.trade.fastpay.refund.query](./test/alipay_trade_fastpay_refund_query_test.go)                           |
 | [alipay.trade.page.pay](./test/alipay_trade_page_pay_test.go)                                                   |
 | [alipay.trade.pay](./test/alipay_trade_pay_test.go)                                                             |

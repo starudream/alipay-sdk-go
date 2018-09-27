@@ -12,14 +12,6 @@ func TestAlipayTradeRefund(t *testing.T) {
 		OutTradeNo:   "20180901000000QWW00001",
 		RefundAmount: "9.99",
 		RefundReason: "退款测试",
-		GoodsDetail: []request.AlipayTradeRefundGoodsDetail{
-			{
-				GoodsId:   "test",
-				GoodsName: "test",
-				Quantity:  "1",
-				Price:     "19.99",
-			},
-		},
 	}
 	client.SendRequest(request.AlipayTradeRefundMethod, data)
 }

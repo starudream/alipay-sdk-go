@@ -16,7 +16,7 @@ func TestAlipayTradeWapPay(t *testing.T) {
 		OutTradeNo:  "20180901000000QWW00001",
 		TotalAmount: "9.99",
 		ProductCode: "QUICK_WAP_WAY",
-		ExtendParams: &request.AlipayTradeWapPayExtendParams{
+		ExtendParams: &request.ATWPExtendParams{
 			TransMemo: "测试",
 		},
 	}
