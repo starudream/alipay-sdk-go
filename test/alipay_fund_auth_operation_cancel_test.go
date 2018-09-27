@@ -1,8 +1,9 @@
 package test
 
 import (
-	"github.com/starudream/alipay-sdk-go/request"
 	"testing"
+
+	"github.com/starudream/alipay-sdk-go/request"
 )
 
 func TestAlipayFundAuthOperationCancel(t *testing.T) {
