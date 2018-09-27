@@ -23,6 +23,7 @@ go get -u github.com/starudream/alipay-sdk-go
 | [alipay.fund.coupon.order.app.pay](./test/alipay_fund_coupon_order_app_pay_test.go)                             |
 | [alipay.fund.coupon.order.disburse](./test/alipay_fund_coupon_order_disburse_test.go)                           |
 | [alipay.fund.coupon.order.page.pay](./test/alipay_fund_coupon_order_page_pay_test.go)                           |
+| [alipay.fund.coupon.order.refund](./test/alipay_fund_coupon_order_refund_test.go)                               |
 | [alipay.fund.trans.order.query](./test/alipay_fund_trans_order_query_test.go)                                   |
 | [alipay.fund.trans.toaccount.transfer](./test/alipay_fund_trans_toaccount_transfer_test.go)                     |
 | [alipay.marketing.campaign.cash.create](./test/alipay_marketing_campaign_cash_create_test.go)                   |
