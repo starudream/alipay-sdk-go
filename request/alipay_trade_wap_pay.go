@@ -19,7 +19,7 @@ type AlipayTradeWapPayRequest struct {
 	DisablePayChannels string                        `json:"disable_pay_channels,omitempty"`
 	StoreId            string                        `json:"store_id,omitempty"`
 	QuitUrl            string                        `json:"quit_url,omitempty"`
-	ExtUserInfo        string                        `json:"ext_user_info,omitempty"`
+	ExtUserInfo        AlipayTradeWapPayExtUserInfo  `json:"ext_user_info,omitempty"`
 }
 
 type AlipayTradeWapPayExtendParams struct {
@@ -28,4 +28,14 @@ type AlipayTradeWapPayExtendParams struct {
 	TransMemo            string `json:"TRANS_MEMO,omitempty"`
 	HbFqNum              string `json:"hb_fq_num,omitempty"`
 	HbFqSellerPercent    string `json:"hb_fq_seller_percent,omitempty"`
+}
+
+type AlipayTradeWapPayExtUserInfo struct {
+	Name          string `json:"name,omitempty"`
+	Mobile        string `json:"mobile,omitempty"`
+	CertType      string `json:"cert_type,omitempty"`
+	CertNo        string `json:"cert_no,omitempty"`
+	MinAge        string `json:"min_age,omitempty"`
+	FixBuyer      string `json:"fix_buyer,omitempty"`
+	NeedCheckInfo string `json:"need_check_info,omitempty"`
 }
