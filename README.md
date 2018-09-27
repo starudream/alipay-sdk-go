@@ -35,6 +35,7 @@ go get -u github.com/starudream/alipay-sdk-go
 | [alipay.trade.app.pay](./test/alipay_trade_app_pay_test.go)                                                     |
 | [alipay.trade.cancel](./test/alipay_trade_cancel_test.go)                                                       |
 | [alipay.trade.close](./test/alipay_trade_close_test.go)                                                         |
+| [alipay.trade.create](./test/alipay_trade_create_test.go)                                                       |
 | [alipay.trade.fastpay.refund.query](./test/alipay_trade_fastpay_refund_query_test.go)                           |
 | [alipay.trade.page.pay](./test/alipay_trade_page_pay_test.go)                                                   |
 | [alipay.trade.pay](./test/alipay_trade_pay_test.go)                                                             |
