@@ -1,5 +1,7 @@
 package request
 
+const AlipayTradePagePayMethod = "alipay.trade.page.pay"
+
 type AlipayTradePagePayRequest struct {
 	OutTradeNo           string                         `json:"out_trade_no"`
 	ProductCode          string                         `json:"product_code"`
@@ -26,7 +28,3 @@ type AlipayTradePagePayExtendParams struct {
 	HbFqNum              string `json:"hb_fq_num,omitempty"`
 	HbFqSellerPercent    string `json:"hb_fq_seller_percent,omitempty"`
 }
-
-var (
-	AlipayTradePagePayMethod = "alipay.trade.page.pay"
-)

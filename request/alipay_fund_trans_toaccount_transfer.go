@@ -1,5 +1,7 @@
 package request
 
+const AlipayFundTransToaccountTransferMethod = "alipay.fund.trans.toaccount.transfer"
+
 type AlipayFundTransToaccountTransferRequest struct {
 	OutBizNo      string `json:"out_biz_no"`
 	PayeeType     string `json:"payee_type"`
@@ -9,7 +11,3 @@ type AlipayFundTransToaccountTransferRequest struct {
 	PayeeRealName string `json:"payee_real_name,omitempty"`
 	Remark        string `json:"remark,omitempty"`
 }
-
-var (
-	AlipayFundTransToaccountTransferMethod = "alipay.fund.trans.toaccount.transfer"
-)

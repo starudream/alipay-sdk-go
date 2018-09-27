@@ -1,5 +1,7 @@
 package request
 
+const AlipayTradeRefundMethod = "alipay.trade.refund"
+
 type AlipayTradeRefundRequest struct {
 	OutTradeNo              string                                    `json:"out_trade_no,omitempty"`
 	TradeNo                 string                                    `json:"trade_no,omitempty"`
@@ -35,7 +37,3 @@ type AlipayTradeRefundRefundRoyaltyParameter struct {
 	AmountPercentage string `json:"amount_percentage"`
 	Desc             string `json:"desc"`
 }
-
-var (
-	AlipayTradeRefundMethod = "alipay.trade.refund"
-)

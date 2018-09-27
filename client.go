@@ -78,9 +78,7 @@ type RequestData struct {
 	NotifyUrl    string `json:"notify_url,omitempty"` // 异步通知地址
 }
 
-var (
-	json = jsoniter.ConfigCompatibleWithStandardLibrary
-)
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 func (client *ClientData) DefaultClient(serverUrl, appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData) {
 	client.ServerUrl = serverUrl

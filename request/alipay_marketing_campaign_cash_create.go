@@ -1,5 +1,7 @@
 package request
 
+const AlipayMarketingCampaignCashCreateMethod = "alipay.marketing.campaign.cash.create"
+
 type AlipayMarketingCampaignCashCreateRequest struct {
 	CouponName   string `json:"coupon_name"`
 	PrizeType    string `json:"prize_type"`
@@ -11,7 +13,3 @@ type AlipayMarketingCampaignCashCreateRequest struct {
 	MerchantLink string `json:"merchant_link,omitempty"`
 	SendFreqency string `json:"send_freqency,omitempty"`
 }
-
-var (
-	AlipayMarketingCampaignCashCreateMethod = "alipay.marketing.campaign.cash.create"
-)

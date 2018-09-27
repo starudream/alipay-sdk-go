@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,5 +10,5 @@ func TestAlipayOauthAppToAppAuthUrl(t *testing.T) {
 		config.AppId,
 		"http://127.0.0.1",
 	)
-	fmt.Println(response)
+	t.Log(response)
 }

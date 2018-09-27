@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
@@ -24,5 +23,5 @@ func TestAlipayMarketingCampaignCashCreate(t *testing.T) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(response)
+	t.Log(response)
 }

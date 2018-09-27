@@ -1,5 +1,7 @@
 package request
 
+const AlipayTradePayMethod = "alipay.trade.pay"
+
 type AlipayTradePayRequest struct {
 	OutTradeNo         string                     `json:"out_trade_no"`
 	Scene              string                     `json:"scene"`
@@ -38,7 +40,3 @@ type AlipayTradePayExtendParams struct {
 	IndustryRefluxInfo   string `json:"industry_reflux_info,omitempty"`
 	CardType             string `json:"card_type,omitempty"`
 }
-
-var (
-	AlipayTradePayMethod = "alipay.trade.pay"
-)

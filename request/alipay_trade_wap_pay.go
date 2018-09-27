@@ -1,5 +1,7 @@
 package request
 
+const AlipayTradeWapPayMethod = "alipay.trade.wap.pay"
+
 type AlipayTradeWapPayRequest struct {
 	Body               string                        `json:"body,omitempty"`
 	Subject            string                        `json:"subject"`
@@ -27,7 +29,3 @@ type AlipayTradeWapPayExtendParams struct {
 	HbFqNum              string `json:"hb_fq_num,omitempty"`
 	HbFqSellerPercent    string `json:"hb_fq_seller_percent,omitempty"`
 }
-
-var (
-	AlipayTradeWapPayMethod = "alipay.trade.wap.pay"
-)

@@ -1,5 +1,7 @@
 package request
 
+const AlipayTradePrecreateMethod = "alipay.trade.precreate"
+
 type AlipayTradePrecreateRequest struct {
 	OutTradeNo           string                           `json:"out_trade_no"`
 	SellerId             string                           `json:"seller_id,omitempty"`
@@ -45,9 +47,7 @@ type AlipayTradePrecreateSettleDetailInfo struct {
 	TransInType      string `json:"trans_in_type"`
 	TransIn          string `json:"trans_in"`
 	SummaryDimension string `json:"summary_dimension,omitempty"`
+	SettleEntityId   string `json:"settle_entity_id,omitempty"`
+	SettleEntityType string `json:"settle_entity_type,omitempty"`
 	Amount           string `json:"amount"`
 }
-
-var (
-	AlipayTradePrecreateMethod = "alipay.trade.precreate"
-)

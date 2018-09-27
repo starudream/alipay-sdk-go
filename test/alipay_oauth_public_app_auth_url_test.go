@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -13,5 +12,5 @@ func TestAlipayOauthPublicAppAuthUrl(t *testing.T) {
 		"12345678",
 		"auth_user",
 	)
-	fmt.Println(response)
+	t.Log(response)
 }

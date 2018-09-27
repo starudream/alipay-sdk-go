@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/starudream/alipay-sdk-go/request"
@@ -17,5 +16,5 @@ func TestAlipayDataDataserviceBillDownloadurlQuery(t *testing.T) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(response)
+	t.Log(response)
 }

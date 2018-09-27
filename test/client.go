@@ -14,9 +14,7 @@ type Config struct {
 	PartnerId       string `json:"partner_id"`
 }
 
-var (
-	json = jsoniter.ConfigCompatibleWithStandardLibrary
-)
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 func NewClient() (*alipaysdk.ClientData, *Config) {
 	config := ReadConfigFile()

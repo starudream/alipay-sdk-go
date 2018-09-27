@@ -1,5 +1,7 @@
 package request
 
+const AlipayPassInstanceUpdateMethod = "alipay.pass.instance.update"
+
 type AlipayPassInstanceUpdateRequest struct {
 	SerialNumber string `json:"serial_number"`
 	ChannelId    string `json:"channel_id"`
@@ -8,7 +10,3 @@ type AlipayPassInstanceUpdateRequest struct {
 	VerifyCode   string `json:"verify_code,omitempty"`
 	VerifyType   string `json:"verify_type,omitempty"`
 }
-
-var (
-	AlipayPassInstanceUpdateMethod = "alipay.pass.instance.update"
-)

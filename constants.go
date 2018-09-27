@@ -1,6 +1,6 @@
 package alipaysdk
 
-var (
+const (
 	ServerUrlProduction  = "https://openapi.alipay.com/gateway.do"    // 正式环境请求地址
 	ServerUrlDevelopment = "https://openapi.alipaydev.com/gateway.do" // 沙箱环境请求地址
 

@@ -1,8 +1,6 @@
 package request
 
+const AlipaySystemOauthTokenMethod = "alipay.system.oauth.token"
+
 type AlipaySystemOauthTokenRequest struct {
 }
-
-var (
-	AlipaySystemOauthTokenMethod = "alipay.system.oauth.token"
-)
