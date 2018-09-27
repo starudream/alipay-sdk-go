@@ -38,6 +38,7 @@ go get -u github.com/starudream/alipay-sdk-go
 | [alipay.trade.wap.pay](./test/alipay_trade_wap_pay_test.go)                                                     |
 | [alipay.user.info.auth](./test/alipay_user_info_auth_test.go)                                                   |
 | [alipay.user.info.share](./test/alipay_user_info_share_test.go)                                                 |
+| [monitor.heartbeat.syn](./test/monitor_heartbeat_syn_test.go)                                                   |
 
 ## 作者
 
