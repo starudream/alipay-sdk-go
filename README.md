@@ -17,6 +17,7 @@ go get -u github.com/starudream/alipay-sdk-go
 | [alipay.fund.auth.operation.detail.query](./test/alipay_fund_auth_operation_detail_query_test.go)               |
 | [alipay.fund.auth.order.freeze](./test/alipay_fund_auth_order_freeze_test.go)                                   |
 | [alipay.fund.auth.order.unfreeze](./test/alipay_fund_auth_order_unfreeze_test.go)                               |
+| [alipay.fund.auth.order.voucher.create](./test/alipay_fund_auth_order_voucher_create_test.go)                   |
 | [alipay.fund.trans.order.query](./test/alipay_fund_trans_order_query_test.go)                                   |
 | [alipay.fund.trans.toaccount.transfer](./test/alipay_fund_trans_toaccount_transfer_test.go)                     |
 | [alipay.marketing.campaign.cash.create](./test/alipay_marketing_campaign_cash_create_test.go)                   |
