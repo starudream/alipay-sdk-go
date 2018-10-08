@@ -1,10 +1,11 @@
 {
-    "app_id":            "",
-    "partner_id":        "",
-    "seller_id":         "",
-    "return_url":        "",
-    "notify_url":        "",
-    "public_key":        "",
-    "private_key":       "",
-    "alipay_public_key": ""
+    "app_id":             "",
+    "partner_id":         "",
+    "seller_id":          "",
+    "return_url":         "",
+    "notify_url":         "",
+    "public_key":         "",
+    "private_key":        "",
+    "alipay_public_key":  "",
+    "async_notification": ""
 }

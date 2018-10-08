@@ -10,6 +10,7 @@ go get -u github.com/starudream/alipay-sdk-go
 
 | 已测试接口                                                                                                       |
 | --------------------------------------------------------------------------------------------------------------- |
+| [alipayAsyncNotification](./test/alipay_async_notification_test.go)                                             |
 | [publicAppAuthorize.htm](./test/alipay_oauth_public_app_auth_url_test.go)                                       |
 | [appToAppAuth.htm](./test/alipay_oauth_app_to_app_auth_url_test.go)                                             |
 | [alipay.data.dataservice.bill.downloadurl.query](./test/alipay_data_dataservice_bill_downloadurl_query_test.go) |

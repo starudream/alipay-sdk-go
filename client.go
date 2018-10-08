@@ -309,3 +309,51 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 
 	return contentJsonString, nil
 }
+
+func (client *ClientData) CheckAsyncNotification(query string) (bool, error) {
+	Printf("---------- async notification ----------")
+	values, err := url.ParseQuery(query)
+	if err != nil {
+		return false, err
+	}
+
+	signString := values.Get("sign") // 签名字符串
+
+	// 去除不必要字段
+	values.Del("sign")
+	values.Del("sign_type")
+
+	// 遍历 map 将 key 取出来并按照 ascii 排序
+	var keys []string
+	for key := range values {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+
+	// 拼接字符串
+	contentString := "" // 待签名参数串
+	for _, key := range keys {
+		value, _ := url.QueryUnescape(values.Get(key))
+		Printf("%s: %s", key, value)
+		contentString += key + "=" + value + "&"
+	}
+	// 去掉最后一个 "&"
+	contentString = contentString[:len(contentString)-1]
+	Printf("sign: %s", signString)
+	Printf("content: %s", contentString)
+
+	// 验证签名
+	if client.RequestData.SignType == "RSA" {
+		err = RsaCheck(contentString, signString, client.AlipayPublicKey, crypto.SHA1)
+		if err != nil {
+			return false, err
+		}
+	} else if client.RequestData.SignType == "RSA2" {
+		err = RsaCheck(contentString, signString, client.AlipayPublicKey, crypto.SHA256)
+		if err != nil {
+			return false, err
+		}
+	}
+
+	return true, nil
+}
