@@ -43,7 +43,7 @@ func RsaSign(content, privateKeyString string, hash crypto.Hash) (string, error)
 	return sign, nil
 }
 
-func RsaVerify(content, signString, alipayPublicKey string, hash crypto.Hash) (error) {
+func RsaVerify(content, signString, alipayPublicKey string, hash crypto.Hash) error {
 	h := crypto.Hash.New(hash)
 	h.Write([]byte(content))
 	contentBytes := h.Sum(nil)

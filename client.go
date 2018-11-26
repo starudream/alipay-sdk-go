@@ -12,22 +12,22 @@ import (
 )
 
 type Client interface {
-	DefaultClient(serverUrl, appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData)
-	DefaultProductionClient(appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData)
-	DefaultDevelopmentClient(appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData)
-	DefaultSimpleProductionClient(appId, privateKey, alipayPublicKey string) (*ClientData)
-	DefaultSimpleDevelopmentClient(appId, privateKey, alipayPublicKey string) (*ClientData)
+	DefaultClient(serverUrl, appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData
+	DefaultProductionClient(appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData
+	DefaultDevelopmentClient(appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData
+	DefaultSimpleProductionClient(appId, privateKey, alipayPublicKey string) *ClientData
+	DefaultSimpleDevelopmentClient(appId, privateKey, alipayPublicKey string) *ClientData
 
-	DefaultPublicAppAuthUrl(authUrl, appId, redirectUri, state string, scopes string) (string)
-	DefaultProductionPublicAppAuthUrl(appId, redirectUri, state string, scopes string) (string)
-	DefaultDevelopmentPublicAppAuthUrl(appId, redirectUri, state string, scopes string) (string)
+	DefaultPublicAppAuthUrl(authUrl, appId, redirectUri, state string, scopes string) string
+	DefaultProductionPublicAppAuthUrl(appId, redirectUri, state string, scopes string) string
+	DefaultDevelopmentPublicAppAuthUrl(appId, redirectUri, state string, scopes string) string
 
-	DefaultAppToAppAuthUrl(authUrl, appId, redirectUri string) (string)
-	DefaultProductionAppToAppAuthUrl(appId, redirectUri string) (string)
-	DefaultDevelopmentAppToAppAuthUrl(appId, redirectUri string) (string)
+	DefaultAppToAppAuthUrl(authUrl, appId, redirectUri string) string
+	DefaultProductionAppToAppAuthUrl(appId, redirectUri string) string
+	DefaultDevelopmentAppToAppAuthUrl(appId, redirectUri string) string
 
 	SetAppAuthToken(appAuthToken string)
-	SetGrantTypeAndCode(grantType, code string) (error)
+	SetGrantTypeAndCode(grantType, code string) error
 	SetAuthToken(authToken string)
 	SetReturnUrl(returnUrl string)
 	SetNotifyUrl(notifyUrl string)
@@ -80,7 +80,7 @@ type RequestData struct {
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-func (client *ClientData) DefaultClient(serverUrl, appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData) {
+func (client *ClientData) DefaultClient(serverUrl, appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData {
 	client.ServerUrl = serverUrl
 	client.PrivateKey = privateKey
 	client.AlipayPublicKey = alipayPublicKey
@@ -92,23 +92,23 @@ func (client *ClientData) DefaultClient(serverUrl, appId, format, charset, signT
 	return client
 }
 
-func (client *ClientData) DefaultProductionClient(appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData) {
+func (client *ClientData) DefaultProductionClient(appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData {
 	return client.DefaultClient(ServerUrlProduction, appId, format, charset, signType, privateKey, alipayPublicKey)
 }
 
-func (client *ClientData) DefaultDevelopmentClient(appId, format, charset, signType, privateKey, alipayPublicKey string) (*ClientData) {
+func (client *ClientData) DefaultDevelopmentClient(appId, format, charset, signType, privateKey, alipayPublicKey string) *ClientData {
 	return client.DefaultClient(ServerUrlDevelopment, appId, format, charset, signType, privateKey, alipayPublicKey)
 }
 
-func (client *ClientData) DefaultSimpleProductionClient(appId, privateKey, alipayPublicKey string) (*ClientData) {
+func (client *ClientData) DefaultSimpleProductionClient(appId, privateKey, alipayPublicKey string) *ClientData {
 	return client.DefaultClient(ServerUrlProduction, appId, "JSON", "UTF-8", "RSA2", privateKey, alipayPublicKey)
 }
 
-func (client *ClientData) DefaultSimpleDevelopmentClient(appId, privateKey, alipayPublicKey string) (*ClientData) {
+func (client *ClientData) DefaultSimpleDevelopmentClient(appId, privateKey, alipayPublicKey string) *ClientData {
 	return client.DefaultClient(ServerUrlDevelopment, appId, "JSON", "UTF-8", "RSA2", privateKey, alipayPublicKey)
 }
 
-func (client *ClientData) DefaultPublicAppAuthUrl(authUrl, appId, redirectUri, state string, scopes string) (string) {
+func (client *ClientData) DefaultPublicAppAuthUrl(authUrl, appId, redirectUri, state string, scopes string) string {
 	return authUrl +
 		"?app_id=" + url.QueryEscape(appId) +
 		"&scope=" + url.QueryEscape(scopes) +
@@ -116,25 +116,25 @@ func (client *ClientData) DefaultPublicAppAuthUrl(authUrl, appId, redirectUri, s
 		"&state=" + url.QueryEscape(state)
 }
 
-func (client *ClientData) DefaultProductionPublicAppAuthUrl(appId, redirectUri, state string, scopes string) (string) {
+func (client *ClientData) DefaultProductionPublicAppAuthUrl(appId, redirectUri, state string, scopes string) string {
 	return client.DefaultPublicAppAuthUrl(PublicAppAuthUrlProduction, appId, redirectUri, state, scopes)
 }
 
-func (client *ClientData) DefaultDevelopmentPublicAppAuthUrl(appId, redirectUri, state string, scopes string) (string) {
+func (client *ClientData) DefaultDevelopmentPublicAppAuthUrl(appId, redirectUri, state string, scopes string) string {
 	return client.DefaultPublicAppAuthUrl(PublicAppAuthUrlDevelopment, appId, redirectUri, state, scopes)
 }
 
-func (client *ClientData) DefaultAppToAppAuthUrl(authUrl, appId, redirectUri string) (string) {
+func (client *ClientData) DefaultAppToAppAuthUrl(authUrl, appId, redirectUri string) string {
 	return authUrl +
 		"?app_id=" + url.QueryEscape(appId) +
 		"&redirect_uri=" + url.QueryEscape(redirectUri)
 }
 
-func (client *ClientData) DefaultProductionAppToAppAuthUrl(appId, redirectUri string) (string) {
+func (client *ClientData) DefaultProductionAppToAppAuthUrl(appId, redirectUri string) string {
 	return client.DefaultAppToAppAuthUrl(AppToAppAuthUrlProduction, appId, redirectUri)
 }
 
-func (client *ClientData) DefaultDevelopmentAppToAppAuthUrl(appId, redirectUri string) (string) {
+func (client *ClientData) DefaultDevelopmentAppToAppAuthUrl(appId, redirectUri string) string {
 	return client.DefaultAppToAppAuthUrl(AppToAppAuthUrlDevelopment, appId, redirectUri)
 }
 
@@ -142,7 +142,7 @@ func (client *ClientData) SetAppAuthToken(appAuthToken string) {
 	client.RequestData.AppAuthToken = appAuthToken
 }
 
-func (client *ClientData) SetGrantTypeAndCode(grantType, code string) (error) {
+func (client *ClientData) SetGrantTypeAndCode(grantType, code string) error {
 	if grantType == "authorization_code" {
 		client.RequestData.Code = code
 	} else if grantType == "refresh_token" {
@@ -167,7 +167,7 @@ func (client *ClientData) SetNotifyUrl(notifyUrl string) {
 	client.RequestData.NotifyUrl = notifyUrl
 }
 
-func (client *ClientData) Validate() (error) {
+func (client *ClientData) Validate() error {
 	if client.RequestData.SignType != "RSA" && client.RequestData.SignType != "RSA2" {
 		return errors.New("unsupported sign_type")
 	}
@@ -186,7 +186,7 @@ func (client *ClientData) ComposeParameterString() (string, string, error) {
 		return "", "", err
 	}
 	requestDataMap := make(map[string]string)
-	json.Unmarshal(bytes, &requestDataMap)
+	_ = json.Unmarshal(bytes, &requestDataMap)
 
 	// 遍历 map 将 key 取出来并按照 ascii 排序
 	var keys []string
@@ -242,7 +242,7 @@ func (client *ClientData) RequestUrl(method string, bizContent interface{}) (str
 	sign := ""
 	if client.RequestData.SignType == "RSA" {
 		sign, err = RsaSign(signString, client.PrivateKey, crypto.SHA1)
-	} else if client.RequestData.SignType == "RSA2" {
+	} else {
 		sign, err = RsaSign(signString, client.PrivateKey, crypto.SHA256)
 	}
 	if err != nil {
@@ -274,7 +274,7 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 
 	// 首先通过解析 json 判断有必要字段
 	var response map[string]interface{}
-	json.Unmarshal([]byte(body), &response)
+	_ = json.Unmarshal([]byte(body), &response)
 	contentInterface := response["error_response"]
 	if contentInterface == nil {
 		contentInterface = response[strings.Replace(method, ".", "_", -1)+"_response"]
@@ -297,14 +297,11 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 	// 验证签名
 	if client.RequestData.SignType == "RSA" {
 		err = RsaVerify(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA1)
-		if err != nil {
-			return "", err
-		}
-	} else if client.RequestData.SignType == "RSA2" {
+	} else {
 		err = RsaVerify(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA256)
-		if err != nil {
-			return "", err
-		}
+	}
+	if err != nil {
+		return "", err
 	}
 
 	return contentJsonString, nil
@@ -345,14 +342,11 @@ func (client *ClientData) CheckAsyncNotification(query string) (bool, error) {
 	// 验证签名
 	if client.RequestData.SignType == "RSA" {
 		err = RsaVerify(contentString, signString, client.AlipayPublicKey, crypto.SHA1)
-		if err != nil {
-			return false, err
-		}
-	} else if client.RequestData.SignType == "RSA2" {
+	} else {
 		err = RsaVerify(contentString, signString, client.AlipayPublicKey, crypto.SHA256)
-		if err != nil {
-			return false, err
-		}
+	}
+	if err != nil {
+		return false, err
 	}
 
 	return true, nil
