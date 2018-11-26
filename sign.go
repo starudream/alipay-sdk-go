@@ -59,18 +59,11 @@ func RsaVerify(content, signString, alipayPublicKey string, hash crypto.Hash) er
 	}
 
 	var publicKey *rsa.PublicKey
-	if hash == crypto.SHA1 {
-		publicKey, err = x509.ParsePKCS1PublicKey(publicKeyBytes)
-		if err != nil {
-			return errors.New("alipay public key is incorrect")
-		}
-	} else {
-		publicKeyInterface, err := x509.ParsePKIXPublicKey(publicKeyBytes)
-		if err != nil {
-			return errors.New("alipay public key is incorrect")
-		}
-		publicKey = publicKeyInterface.(*rsa.PublicKey)
+	publicKeyInterface, err := x509.ParsePKIXPublicKey(publicKeyBytes)
+	if err != nil {
+		return errors.New("alipay public key is incorrect")
 	}
+	publicKey = publicKeyInterface.(*rsa.PublicKey)
 
 	err = rsa.VerifyPKCS1v15(publicKey, hash, contentBytes, signBytes)
 	if err != nil {

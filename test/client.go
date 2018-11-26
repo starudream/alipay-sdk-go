@@ -13,6 +13,7 @@ type Config struct {
 	SellerId          string `json:"seller_id"`
 	ReturnUrl         string `json:"return_url"`
 	NotifyUrl         string `json:"notify_url"`
+	SignType          string `json:"sign_type"`
 	PublicKey         string `json:"public_key"`
 	PrivateKey        string `json:"private_key"`
 	AlipayPublicKey   string `json:"alipay_public_key"`
@@ -27,15 +28,18 @@ func NewClient() (*alipaysdk.ClientData, *Config) {
 	config := ReadConfigFile()
 
 	client := &alipaysdk.ClientData{}
-	client.DefaultSimpleDevelopmentClient(
+	client.DefaultProductionClient(
 		config.AppId,
+		"JSON",
+		"UTF-8",
+		config.SignType,
 		config.PrivateKey,
 		config.AlipayPublicKey,
 	)
 	return client, config
 }
 
-func ReadConfigFile() (*Config) {
+func ReadConfigFile() *Config {
 	var data *Config
 
 	bytes, err := ioutil.ReadFile("config.json")
