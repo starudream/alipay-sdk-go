@@ -296,12 +296,12 @@ func (client *ClientData) SendRequest(method string, bizContent interface{}) (st
 
 	// 验证签名
 	if client.RequestData.SignType == "RSA" {
-		err = RsaCheck(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA1)
+		err = RsaVerify(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA1)
 		if err != nil {
 			return "", err
 		}
 	} else if client.RequestData.SignType == "RSA2" {
-		err = RsaCheck(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA256)
+		err = RsaVerify(contentJsonString, signString, client.AlipayPublicKey, crypto.SHA256)
 		if err != nil {
 			return "", err
 		}
@@ -344,12 +344,12 @@ func (client *ClientData) CheckAsyncNotification(query string) (bool, error) {
 
 	// 验证签名
 	if client.RequestData.SignType == "RSA" {
-		err = RsaCheck(contentString, signString, client.AlipayPublicKey, crypto.SHA1)
+		err = RsaVerify(contentString, signString, client.AlipayPublicKey, crypto.SHA1)
 		if err != nil {
 			return false, err
 		}
 	} else if client.RequestData.SignType == "RSA2" {
-		err = RsaCheck(contentString, signString, client.AlipayPublicKey, crypto.SHA256)
+		err = RsaVerify(contentString, signString, client.AlipayPublicKey, crypto.SHA256)
 		if err != nil {
 			return false, err
 		}
