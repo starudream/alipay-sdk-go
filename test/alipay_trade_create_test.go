@@ -14,5 +14,5 @@ func TestAlipayTradeCreate(t *testing.T) {
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
 		BuyerId:     "2088102169174184",
 	}
-	client.SendRequest(request.AlipayTradeCreateMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeCreateMethod, data)
 }

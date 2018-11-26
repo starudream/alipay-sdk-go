@@ -14,5 +14,5 @@ func TestAlipayFundCouponOperationQuery(t *testing.T) {
 		OperationId:  "",
 		OutRequestNo: "20180901000000AFCOPP00001",
 	}
-	client.SendRequest(request.AlipayFundCouponOperationQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundCouponOperationQueryMethod, data)
 }

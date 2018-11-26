@@ -13,5 +13,5 @@ func TestAlipayFundAuthOperationCancel(t *testing.T) {
 		OutRequestNo: "20180901000000AFAOF00001",
 		Remark:       "授权撤销",
 	}
-	client.SendRequest(request.AlipayFundAuthOperationCancelMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundAuthOperationCancelMethod, data)
 }

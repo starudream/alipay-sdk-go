@@ -14,5 +14,5 @@ func TestAlipayFundCouponOrderRefund(t *testing.T) {
 		Amount:       "9.99",
 		Remark:       "红包退款",
 	}
-	client.SendRequest(request.AlipayFundCouponOrderRefundMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundCouponOrderRefundMethod, data)
 }

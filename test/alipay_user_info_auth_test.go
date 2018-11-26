@@ -13,5 +13,5 @@ func TestAlipayUserInfoAuth(t *testing.T) {
 		Scopes: []string{"auth_user"},
 		State:  "12345678",
 	}
-	client.RequestUrl(request.AlipayUserInfoAuthMethod, data)
+	_, _ = client.RequestUrl(request.AlipayUserInfoAuthMethod, data)
 }

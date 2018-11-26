@@ -11,5 +11,5 @@ func TestAlipayTradeQuery(t *testing.T) {
 	data := request.AlipayTradeQueryRequest{
 		OutTradeNo: "20180901000000ATWP00001",
 	}
-	client.SendRequest(request.AlipayTradeQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeQueryMethod, data)
 }

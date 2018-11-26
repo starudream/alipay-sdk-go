@@ -12,5 +12,5 @@ func TestAlipayTradeFastpayRefundQuery(t *testing.T) {
 		OutTradeNo:   "20180901000000ATWP00001",
 		OutRequestNo: "20180901000000ATWP00001",
 	}
-	client.SendRequest(request.AlipayTradeFastpayRefundQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeFastpayRefundQueryMethod, data)
 }

@@ -15,5 +15,5 @@ func TestAlipayTradePrecreate(t *testing.T) {
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	client.SendRequest(request.AlipayTradePrecreateMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradePrecreateMethod, data)
 }

@@ -20,5 +20,5 @@ func TestAlipayTradeWapPay(t *testing.T) {
 			TransMemo: "测试",
 		},
 	}
-	client.RequestUrl(request.AlipayTradeWapPayMethod, data)
+	_, _ = client.RequestUrl(request.AlipayTradeWapPayMethod, data)
 }

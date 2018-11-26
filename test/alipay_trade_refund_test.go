@@ -13,5 +13,5 @@ func TestAlipayTradeRefund(t *testing.T) {
 		RefundAmount: "9.99",
 		RefundReason: "退款测试",
 	}
-	client.SendRequest(request.AlipayTradeRefundMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeRefundMethod, data)
 }

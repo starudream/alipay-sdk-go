@@ -14,5 +14,5 @@ func TestAlipayFundAuthOrderUnfreeze(t *testing.T) {
 		Amount:       "1.11",
 		Remark:       "解冻 1.11 元",
 	}
-	client.SendRequest(request.AlipayFundAuthOrderUnfreezeMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundAuthOrderUnfreezeMethod, data)
 }

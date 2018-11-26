@@ -11,5 +11,5 @@ func TestAlipayTradeClose(t *testing.T) {
 	data := request.AlipayTradeCloseRequest{
 		OutTradeNo: "20180901000000ATWP00001",
 	}
-	client.SendRequest(request.AlipayTradeCloseMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeCloseMethod, data)
 }

@@ -11,5 +11,5 @@ func TestAlipayMarketingCampaignCashDetailQuery(t *testing.T) {
 	data := &request.AlipayMarketingCampaignCashDetailQueryRequest{
 		CrowdNo: "5PZx2Y5c55NlJV_FXl0V0_Wve9z3gpyqu-HzZaTrTFTMnSZ96O-zxUfKlHp5cxmx",
 	}
-	client.SendRequest(request.AlipayMarketingCampaignCashDetailQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayMarketingCampaignCashDetailQueryMethod, data)
 }

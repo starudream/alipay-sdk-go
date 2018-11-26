@@ -12,5 +12,5 @@ func TestAlipayDataDataserviceBillDownloadurlQuery(t *testing.T) {
 		BillType: "trade",
 		BillDate: "2018-07",
 	}
-	client.SendRequest(request.AlipayDataDataserviceBillDownloadurlQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayDataDataserviceBillDownloadurlQueryMethod, data)
 }

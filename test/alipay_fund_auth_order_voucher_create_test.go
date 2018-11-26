@@ -15,5 +15,5 @@ func TestAlipayFundAuthOrderVoucherCreate(t *testing.T) {
 		Amount:       "9.99",
 		PayeeLogonId: "dlnhdb4422@sandbox.com",
 	}
-	client.SendRequest(request.AlipayFundAuthOrderVoucherCreateMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundAuthOrderVoucherCreateMethod, data)
 }

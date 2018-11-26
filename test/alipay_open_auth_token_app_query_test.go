@@ -11,5 +11,5 @@ func TestAlipayOpenAuthTokenAppQuery(t *testing.T) {
 	data := &request.AlipayOpenAuthTokenAppQueryRequest{
 		AppAuthToken: "201808BBef00aa93df16493fb6d0388e715f8X96",
 	}
-	client.SendRequest(request.AlipayOpenAuthTokenAppQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayOpenAuthTokenAppQueryMethod, data)
 }

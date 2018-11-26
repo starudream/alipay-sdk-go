@@ -8,9 +8,9 @@ import (
 
 func TestAlipaySystemOauthToken(t *testing.T) {
 	client, _ := NewClient()
-	client.SetGrantTypeAndCode(
+	_ = client.SetGrantTypeAndCode(
 		"authorization_code",
-		"2b744f7f07ba45f5804fbc9d89c4XX18",
+		"ef929d7c82854897859d872547d6TX35",
 	)
-	client.SendRequest(request.AlipaySystemOauthTokenMethod, nil)
+	_, _ = client.SendRequest(request.AlipaySystemOauthTokenMethod, nil)
 }

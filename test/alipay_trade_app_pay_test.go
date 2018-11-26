@@ -15,5 +15,5 @@ func TestAlipayTradeAppPay(t *testing.T) {
 		TotalAmount: "9.99",
 		ProductCode: "QUICK_MSECURITY_PAY",
 	}
-	client.SendRequest(request.AlipayTradeAppPayMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeAppPayMethod, data)
 }

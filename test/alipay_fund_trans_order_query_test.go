@@ -11,5 +11,5 @@ func TestAlipayFundTransOrderQuery(t *testing.T) {
 	data := &request.AlipayFundTransOrderQueryRequest{
 		OutBizNo: "20180901000000AFTTT00001",
 	}
-	client.SendRequest(request.AlipayFundTransOrderQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundTransOrderQueryMethod, data)
 }

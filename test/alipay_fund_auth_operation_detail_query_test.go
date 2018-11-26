@@ -12,5 +12,5 @@ func TestAlipayFundAuthOperationDetailQuery(t *testing.T) {
 		OutOrderNo:   "20180901000000AFAOF00001",
 		OutRequestNo: "20180901000000AFAOF00001",
 	}
-	client.SendRequest(request.AlipayFundAuthOperationDetailQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundAuthOperationDetailQueryMethod, data)
 }

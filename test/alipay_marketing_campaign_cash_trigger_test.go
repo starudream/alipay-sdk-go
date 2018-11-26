@@ -13,5 +13,5 @@ func TestAlipayMarketingCampaignCashTrigger(t *testing.T) {
 		LoginId:  "dlnhdb4422@sandbox.com",
 		OutBizNo: "20180901000000AMCCT00001",
 	}
-	client.SendRequest(request.AlipayMarketingCampaignCashTriggerMethod, data)
+	_, _ = client.SendRequest(request.AlipayMarketingCampaignCashTriggerMethod, data)
 }

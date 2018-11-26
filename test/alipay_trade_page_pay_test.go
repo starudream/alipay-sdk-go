@@ -17,5 +17,5 @@ func TestAlipayTradePagePay(t *testing.T) {
 		Subject:     "标题测试测试测试测试测试测试测试测试测试",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	client.RequestUrl(request.AlipayTradePagePayMethod, data)
+	_, _ = client.RequestUrl(request.AlipayTradePagePayMethod, data)
 }

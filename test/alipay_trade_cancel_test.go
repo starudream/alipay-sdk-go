@@ -11,5 +11,5 @@ func TestAlipayTradeCancel(t *testing.T) {
 	data := request.AlipayTradeCancelRequest{
 		OutTradeNo: "20180901000000ATWP00001",
 	}
-	client.SendRequest(request.AlipayTradeCancelMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradeCancelMethod, data)
 }

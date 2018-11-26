@@ -13,5 +13,5 @@ func TestAlipayMarketingCampaignCashListQuery(t *testing.T) {
 		PageSize:   "50",
 		PageIndex:  "1",
 	}
-	client.SendRequest(request.AlipayMarketingCampaignCashListQueryMethod, data)
+	_, _ = client.SendRequest(request.AlipayMarketingCampaignCashListQueryMethod, data)
 }

@@ -14,5 +14,5 @@ func TestAlipayFundCouponOrderPagePay(t *testing.T) {
 		OrderTitle:   "发送红包",
 		Amount:       "9.99",
 	}
-	client.SendRequest(request.AlipayFundCouponOrderPagePayMethod, data)
+	_, _ = client.SendRequest(request.AlipayFundCouponOrderPagePayMethod, data)
 }

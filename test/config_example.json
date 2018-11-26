@@ -4,6 +4,7 @@
     "seller_id":          "",
     "return_url":         "",
     "notify_url":         "",
+    "sign_type":          "",
     "public_key":         "",
     "private_key":        "",
     "alipay_public_key":  "",

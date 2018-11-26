@@ -14,5 +14,5 @@ func TestAlipayPassInstanceAdd(t *testing.T) {
 		RecognitionType: "1",
 		RecognitionInfo: `{"partner_id":"` + config.PartnerId + `","out_trade_no":"20180828150000_1012216190_a1b2c3d4e5"}`,
 	}
-	client.SendRequest(request.AlipayPassInstanceAddMethod, data)
+	_, _ = client.SendRequest(request.AlipayPassInstanceAddMethod, data)
 }

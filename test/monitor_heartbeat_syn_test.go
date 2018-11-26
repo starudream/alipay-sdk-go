@@ -9,5 +9,5 @@ import (
 func TestMonitorHeartbeatSyn(t *testing.T) {
 	client, _ := NewClient()
 	data := request.MonitorHeartbeatSynRequest{}
-	client.SendRequest(request.MonitorHeartbeatSynMethod, data)
+	_, _ = client.SendRequest(request.MonitorHeartbeatSynMethod, data)
 }

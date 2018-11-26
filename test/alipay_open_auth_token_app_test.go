@@ -12,5 +12,5 @@ func TestAlipayOpenAuthTokenApp(t *testing.T) {
 		GrantType: "authorization_code",
 		Code:      "0c41e956be0949449339c1b1e8e40X96",
 	}
-	client.SendRequest(request.AlipayOpenAuthTokenAppMethod, data)
+	_, _ = client.SendRequest(request.AlipayOpenAuthTokenAppMethod, data)
 }

@@ -12,5 +12,5 @@ func TestAlipayMarketingCampaignCashStatusModify(t *testing.T) {
 		CrowdNo:    "5PZx2Y5c55NlJV_FXl0V0_Wve9z3gpyqu-HzZaTrTFTMnSZ96O-zxUfKlHp5cxmx",
 		CampStatus: "PAUSE",
 	}
-	client.SendRequest(request.AlipayMarketingCampaignCashStatusModifyMethod, data)
+	_, _ = client.SendRequest(request.AlipayMarketingCampaignCashStatusModifyMethod, data)
 }

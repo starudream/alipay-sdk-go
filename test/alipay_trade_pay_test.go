@@ -18,5 +18,5 @@ func TestAlipayTradePay(t *testing.T) {
 		TotalAmount: "9.99",
 		Body:        "内容测试测试测试测试测试测试测试测试测试",
 	}
-	client.SendRequest(request.AlipayTradePayMethod, data)
+	_, _ = client.SendRequest(request.AlipayTradePayMethod, data)
 }
