@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 
 	"github.com/json-iterator/go"
+
 	"github.com/starudream/alipay-sdk-go"
 )
 
@@ -24,6 +25,7 @@ var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 func NewClient() (*alipaysdk.ClientData, *Config) {
 	alipaysdk.SetDebug(true)
+	alipaysdk.SetLogger(nil)
 
 	config := ReadConfigFile()
 

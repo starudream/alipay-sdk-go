@@ -17,6 +17,12 @@ func SetDebug(debug bool) {
 	enableDebug = debug
 }
 
+func SetLogger(log *log.Logger) {
+	if log != nil {
+		logger = log
+	}
+}
+
 func Printf(format string, v ...interface{}) {
 	if enableDebug {
 		logger.Printf(format, v...)
